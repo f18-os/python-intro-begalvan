@@ -13,7 +13,7 @@ if len(sys.argv) is not 3:
 input = sys.argv[1]
 output = sys.argv[2]
 
-#use findall() -> to find all matches and return key string
+# use findall() -> to find all matches and return key string
 def findall(key, text_string):
     find_all = re.findall(r'\b' + key + '\\b', text_string)
     for word in find_all:
@@ -21,13 +21,13 @@ def findall(key, text_string):
         relat[word] = count + 1
     return relat.keys()
 
-#to end program
+# to end program
 def end():
     print("Passed")
     file.close()
     exit()
 
-
+# to clean text -> take out numbers
 def clean_numbers(doc):
     no_numbers = ''
     i = 0
