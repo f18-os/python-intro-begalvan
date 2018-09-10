@@ -13,7 +13,7 @@ if len(sys.argv) is not 3:
 input = sys.argv[1]
 output = sys.argv[2]
 
-
+#use findall() -> to find all matches and return key string
 def findall(key, text_string):
     find_all = re.findall(r'\b' + key + '\\b', text_string)
     for word in find_all:
@@ -21,7 +21,7 @@ def findall(key, text_string):
         relat[word] = count + 1
     return relat.keys()
 
-
+#to end program
 def end():
     print("Passed")
     file.close()
@@ -45,7 +45,6 @@ def list_appended(words, text_string):
         list_append.append(findall(words[index], text_string))
         index += 1
     return list_append
-
 
 key = open('speechKey.txt')
 read_key = key.read()
