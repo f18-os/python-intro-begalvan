@@ -8,31 +8,26 @@ This shell is written in Python 2.7.14.
 
 In the repository there is a file called "shellLab.py" which is the shell.
 This is an executable file that runs on Cygwin Python Version 2.7.14 
-The shell's prompt is "$", "q" is used to quit the shell.
+The shell's prompt is "$" and "q" is used to quit the shell.
+Example:
+'_$ ./shellLab.py`
+* will run the shell
+
 This shell can handle:
 * ">" redirect to
 * "ls|wc" pipe
 
-Example:
-'_$ ./shellLab.py`
-* will run the shell
-'_$ echo `
-* excluding white space and punctuation
-* is case-insensitive
-* print out to the output file (overwriting if it exists) the list of
-  words sorted in descending order with their respective totals
-  separated by a space, one word per line
+Example for redirect:
+'_$ echo great > output.txt`
+* will "redirect 'great' to" the file output.txt
 
-To test your program we provide wordCountTest.py and two key
-files. This test program takes your output file and notes any
-differences with the key file. An example use is:
+Example for pipe:
+'_$ ls|wc`
+* handles pipe
 
-`$ python wordCountTest.py declaration.txt myOutput.txt declarationKey.txt`
-
-The re regular expression library and python dictionaries should be
-used in your program. 
-
-Note that there are two major dialects of Python.  Python 3.0 is
-incompatible with 2.7.   As a result, Python 2.7 remains popular.  All
-of our examples are in 2.7.  We (mildly) encourage students to use 2.7
-for their assignments. 
+For this lab assignment I received help from Abigail Lira to understand 
+and implement various concepts such as the 'PS1' environment variable, 
+general idea and implementation of redirect to and pipe. 
+Other resources used are:
+https://www.youtube.com/watch?v=FcUlMsVX7aE
+https://www.tutorialspoint.com/python/os_pipe.htm
