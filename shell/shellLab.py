@@ -34,6 +34,30 @@ def executeCmd(allCmd, redirect=False, redirectSource=""):
     pid = os.getpid()
     rc = os.fork()
 
+    if rc < 0:
+        os.write(2, ("fork failed, returning %d\n" % rc).encode())
+        sys.exit(1)
 
+    elif rc == 0:  # child
+        if redirect:
+            os.close(1)  # redirect child's stdout
+            sys.stdout = open(redirectSource, "w")
+
+        arguments = getArgs(allCmd)
+        validateArgs(arguments)
+
+        os.write(2, ("Child: Error: Could not exec %s\n" % arguments[0]).encode())
+        sys.exit(1)  # terminate with errorq
+
+    else:  # parent (forked ok)
+        childPidCode = os.wait()
+
+def runShell():
+    while True:
+        allCmd = raw_input(os.environ['PS1'])
+        if allCmd == "q":
+            break
+        else:
+            redirect(allCmd)       
 
 
