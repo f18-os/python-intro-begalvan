@@ -13,5 +13,9 @@ def validateArgs(arguments):
                     os.execve(program, arguments, os.environ)  # try to exec program
                 except EnvironmentError:  # ...expected
                     pass  # ...fail quietly
+def redirect(allCmd): #redirect to
+      redirect = allCmd.split(">")
+      needsToRedirect = len(redirect) > 1
+      executeCmd(redirect[0], needsToRedirect, redirect[1].strip() if needsToRedirect else "")
 
 
