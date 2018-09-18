@@ -30,5 +30,10 @@ def getArgs(allCmd):  #get arguments for pipe and split
             print(response)
             return ""
 
+def executeCmd(allCmd, redirect=False, redirectSource=""):
+    pid = os.getpid()
+    rc = os.fork()
+
+
 
 
