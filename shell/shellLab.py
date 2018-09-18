@@ -60,4 +60,4 @@ def runShell():
         else:
             redirect(allCmd)       
 
-
+runShell()
