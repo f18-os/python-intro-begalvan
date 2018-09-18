@@ -1,12 +1,17 @@
-This repository contains the code for the python introduction lab. The
-purpose is to have a fairly simple python assignment that introduces
-the basic features and tools of python
+CS 4375
+Blanca Galvan
+Shell Lab
 
-In the repository are two plain text files with lots of words. Your
-assignment is to create a python 2 program which:
-* takes as input the name of an input file and output file
-* example
+This repository contains the code for the python shell lab. The
+purpose is to have a shell that handles one IO redirect and one pipe.
 
+In the repository there is a file called "shellLab.py" which is the shell. 
+The shell's prompt is "$"
+This shell can handle:
+* ">" redirect to
+* "ls|wc" pipe
+
+Example:
 `$ python wordCount.py input.txt output.txt`
 * keeps track of the total the number of times each word occurs in the text file 
 * excluding white space and punctuation
