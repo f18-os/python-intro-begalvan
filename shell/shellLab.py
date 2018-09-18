@@ -18,7 +18,7 @@ def redirect(allCmd): #redirect to
       needsToRedirect = len(redirect) > 1
       executeCmd(redirect[0], needsToRedirect, redirect[1].strip() if needsToRedirect else "")
 
-def getArgs(allCmd):  #get arguments for pipe and split
+def getArgs(allCmd):  #get arguments for pipe 
         pipe = allCmd.split("|")
         if len(pipe) == 1:
             return filter(None, allCmd.split(" "))
