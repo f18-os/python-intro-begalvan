@@ -2,7 +2,7 @@
 
 import os, sys, time, re, subprocess
 
-def validateArgs(arguments):
+def validateArgs(arguments,allCmd):
         if arguments == '':
             runShell()
         
@@ -41,10 +41,10 @@ def executeCmd(allCmd, redirect=False, redirectSource=""):
     elif rc == 0:  # child
         if redirect:
             os.close(1)  # redirect child's stdout
-            sys.stdout = open(redirectSource, "w")
+            sys.stdout = open(redirectSource, "w") #write to and create file
 
         arguments = getArgs(allCmd)
-        validateArgs(arguments)
+        validateArgs(arguments, allCmd)
 
         os.write(2, ("Child: Error: Could not exec %s\n" % arguments[0]).encode())
         sys.exit(1)  # terminate with errorq
@@ -53,11 +53,14 @@ def executeCmd(allCmd, redirect=False, redirectSource=""):
         childPidCode = os.wait()
 
 def runShell():
-    while True:
-        allCmd = raw_input(os.environ['PS1'])
-        if allCmd == "q":
-            break
-        else:
-            redirect(allCmd)       
+    try:
+        while True:
+            allCmd = raw_input(os.environ['PS1'])
+            if allCmd == "q":
+                break
+            else:
+                redirect(allCmd)
+    except (KeyboardInterrupt, SystemExit):
+            raise       
 
 runShell()
