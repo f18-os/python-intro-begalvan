@@ -56,11 +56,8 @@ def runShell():
     try:
         while True:
             allCmd = raw_input(os.environ['PS1'])
-            if allCmd == "q":
-                break
-            else:
-                redirect(allCmd)
-    except (KeyboardInterrupt, SystemExit):
-            raise       
-
+            redirect(allCmd)
+    except KeyboardInterrupt:
+            sys.exit()
+            
 runShell()
