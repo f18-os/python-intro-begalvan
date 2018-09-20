@@ -1,5 +1,4 @@
 CS 4375
-Blanca Galvan
 Shell Lab
 
 This repository contains the code for the python shell lab. The
@@ -15,19 +14,13 @@ Example:
 
 This shell can handle:
 * ">" redirect to
-* "ls|wc" pipe
+* "|" pipe
 
 Example for redirect:
 '_$ echo great > output.txt`
 * will "redirect 'great' to" the file output.txt
 
 Example for pipe:
-'_$ ls|wc`
+'_$ ls | wc`
 * handles pipe
 
-For this lab assignment I received help from Abigail Lira to understand 
-and implement various concepts such as the 'PS1' environment variable, 
-general idea and implementation of redirect to and pipe. 
-Other resources used are:
-https://www.youtube.com/watch?v=FcUlMsVX7aE
-https://www.tutorialspoint.com/python/os_pipe.htm
