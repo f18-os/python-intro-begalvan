@@ -57,7 +57,7 @@ def runShell():
         while True:
             allCmd = raw_input(os.environ['PS1'])
             redirect(allCmd)
-    except KeyboardInterrupt:
+    except KeyboardInterrupt: #Ctrl + c quits shell
             sys.exit()
             
 runShell()
